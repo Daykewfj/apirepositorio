@@ -1,0 +1,12 @@
+FROM python:3.9
+
+WORKDIR /app
+
+# Instalar dependências
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+# Copiar código
+COPY . .
+
+CMD ["python", "app.py"]

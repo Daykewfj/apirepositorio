@@ -1,0 +1,9 @@
+FROM postgres:latest
+
+# Definir variáveis de ambiente para o banco de dados
+ENV POSTGRES_DB=escola
+ENV POSTGRES_USER=admin
+ENV POSTGRES_PASSWORD=admin
+
+# Copiar script SQL para inicialização
+COPY init.sql /docker-entrypoint-initdb.d/
